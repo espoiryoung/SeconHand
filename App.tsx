@@ -7,6 +7,9 @@
 import SplashScreen from "react-native-splash-screen";
 import React from 'react';
 import type {PropsWithChildren} from 'react';
+import {NavigationContainer} from '@react-navigation/native';
+import Router from "./src/pages/Router";
+
 import {
   SafeAreaView,
   ScrollView,
@@ -42,8 +45,12 @@ function App(): React.JSX.Element {
 
   return (
     
-    <Splash/>
-    //<Home/>
+    //<Splash/>
+    <Home/>
+    // <NavigationContainer>
+    
+    //     <Router />
+    // </NavigationContainer>
   );
 }
 
