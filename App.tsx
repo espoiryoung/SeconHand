@@ -30,6 +30,7 @@ import {
 
 import Home from './src/pages/Home'
 import Splash from './src/pages/Splash';
+import Search from "./src/pages/Search";
 type SectionProps = PropsWithChildren<{
   title: string;
 }>;
@@ -46,7 +47,8 @@ function App(): React.JSX.Element {
   return (
     
     //<Splash/>
-    <Home/>
+    // <Home/>
+    <Search />
     // <NavigationContainer>
     
     //     <Router />
