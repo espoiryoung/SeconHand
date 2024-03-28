@@ -1,79 +1,165 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# 중고거래 앱 과제
 
-# Getting Started
+# **1. 서 론 (Introduction)**
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+### **1. 개 요 (Overview of rest of SRS)**
 
-## Step 1: Start the Metro Server
+이 과제는 ReactNative를 활용하여 중고 거래 서비스를 구현하는 것에 목적이 있다.
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+중고 물품이 보이는 홈 화면을 세 가지 중 두개를 선택하여 구현한다.
 
-To start Metro, run the following command from the _root_ of your React Native project:
+- 위치 기반 단순 리스트 나열(난이도 하)
+- 시, 구, 동 선택 후 해당되는 동네의 물품 리스트 나열(난이도 하)
+- Google Map 사용으로 마커 표시(난이도 상)
 
-```bash
-# using npm
-npm start
+해당 기능 외 추가 기능을 넣어도 되며 디자인은 자유롭게 구성한다.
 
-# OR using Yarn
-yarn start
-```
+### **2. 범 위 (Scope of product)**
 
-## Step 2: Start your Application
+본 프로젝트의 개발 범위는 다음과 같다.
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+- ReactNative를 활용하여 위치기반으로 내 주변에 등록된 중고물품을 보여주고, 이를 채팅으로 거래할 수 있는 중고거래 앱을 개발한다.
+- 채팅의 경우, 기능은 구현하지 않고 화면만 구현한다.
 
-### For Android
+# **2. 종합 기술 (Overall Description)**
 
-```bash
-# using npm
-npm run android
+### **결과물 기능 (Product Functions)**
 
-# OR using Yarn
-yarn android
-```
+본 프로젝트의 결과물은 다음과 같은 기능을 수행합니다.
 
-### For iOS
+[ 백엔드 서버 앱 ]
 
-```bash
-# using npm
-npm run ios
+- 없음
 
-# OR using Yarn
-yarn ios
-```
+[ 프론트엔드 앱 ]
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+- 쉐어 앱
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+[ CI/CD ]
 
-## Step 3: Modifying your App
+- 선택으로 진행
 
-Now that you have successfully run the app, let's modify it.
+[ 모니터링 ]
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+- 없음
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+# 3.  상세 요구사항
 
-## Congratulations! :tada:
+### **1. 외적 인터페이스 요구사항 (External Interface Requirements)**
 
-You've successfully run and modified your React Native App. :partying_face:
+**[ 스플래시 화면 ]**
 
-### Now what?
+| 구분 | 내용 |
+| --- | --- |
+| 요구사항 ID | EIR-001 |
+| 요구사항명 | 스플래시 화면 |
+| 개요 (목적, 내용) | 본인의 스타일대로 스플래시 화면을 구현하며 하나의 이미지만 넣어도 상관 없으며, RN의 컴포넌트를 활용하여 화면을 구성해도 된다. |
+| 입력 |  |
+| 출력 |  |
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
+**[ 홈 화면 ]**
 
-# Troubleshooting
+| 구분 | 내용 |
+| --- | --- |
+| 요구사항 ID | EIR-002 |
+| 요구사항명 | 홈 화면 |
+| 개요 (목적, 내용) | 다른 사용자가 등록한 중고 물품들이 보여진다.세 가지 기능 중 2가지를 선택해 개발한다(1. 서론 - 1. 개요 참고).헤더에는 동을 선택할 수 있으며 메인 컨텐츠 화면은 리스트 나열 or google map으로 보여준다. |
+| 입력 |  |
+| 출력 |  |
 
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+**[ 동네 선택 화면 ]**
 
-# Learn More
+| 구분 | 내용 |
+| --- | --- |
+| 요구사항 ID | EIR-003 |
+| 요구사항명 | 동네 선택 화면 |
+| 개요 (목적, 내용) | 시, 구, 동을 선택 할 수 있게 행정동, 법정동을 3가지 리스트로 나열하며 셋다 선택 시 홈 화면으로 돌아가며 선택한 동으로 보여지게 한다. |
+| 입력 |  |
+| 출력 |  |
 
-To learn more about React Native, take a look at the following resources:
+**[ 상품 상세 화면 ]**
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+| 구분 | 내용 |
+| --- | --- |
+| 요구사항 ID | EIR-004 |
+| 요구사항명 | 상품 상세 화면 |
+| 개요 (목적, 내용) | 중고물품을 상세하게 볼 수 있는 화면이며 물품의 상세 정보와 하단에는 채팅하기 버튼을 통해 판매자와의 채팅 화면으로 이동한다. |
+| 입력 |  |
+| 출력 |  |
+
+**[ 검색 화면 ]**
+
+| 구분 | 내용 |
+| --- | --- |
+| 요구사항 ID | EIR-005 |
+| 요구사항명 | 검색 화면 |
+| 개요 (목적, 내용) | 중고물품을 검색할 수 있는 화면이며 TextInput의 value 값에 따라 더미데이터들을 나열한다. |
+| 입력 |  |
+| 출력 |  |
+
+**[ 채팅 내역 화면 ]**
+
+| 구분 | 내용 |
+| --- | --- |
+| 요구사항 ID | EIR-006 |
+| 요구사항명 | 채팅 내역 화면 |
+| 개요 (목적, 내용) | 물품 상세 화면에서 채팅하기 버튼을 통해 생성된 채팅 내역들을 보여준다. |
+| 입력 |  |
+| 출력 |  |
+
+**[ 채팅 상세 화면 ]**
+
+| 구분 | 내용 |
+| --- | --- |
+| 요구사항 ID | EIR-007 |
+| 요구사항명 | 채팅 상세 화면 |
+| 개요 (목적, 내용) | 서로 주고받은 채팅 상세 화면을 FlatList로 구현한다. |
+| 입력 |  |
+| 출력 |  |
+
+### **2. 기능적 요구사항 (Functional Requirements)**
+
+**[ 중고 물품 리스트 ]**
+
+| 구분 | 내용 |
+| --- | --- |
+| 요구사항 ID | FUN-001 |
+| 요구사항명 | 중고 물품 리스트 |
+| 개요 (목적, 내용) | 1. 일반 피드처럼 단순히 나열하는 방법과 Google Map을 이용하는 방법 둘 중 하나를 선택해서 구현한다.
+2. 일반 피드 나열은 상품을 단순하게 FlatList로 구현하며 Google Map은 화면 전체를 Map으로 만든 후 하단에 가로 스크롤로 중고 물품 리스트를 구현한다.
+3. Google Map에는 Marker를 표현하여 Marker 터치 시 해당 중고물품의 상세 정보를 하단에 카드 형태로 노출해도 무방하다. |
+| 입력 |  |
+| 출력 |  |
+
+**[ 중고 물품 상세 화면 ]**
+
+| 구분 | 내용 |
+| --- | --- |
+| 요구사항 ID | FUN-002 |
+| 요구사항명 | 중고 물품 상세 화면 |
+| 개요 (목적, 내용) | 중고 물품의 상세 정보를 보여준다. 상단에는 사진을 여러장일 경우 가로 스크롤이 되게 한다. |
+| 입력 |  |
+| 출력 |  |
+
+### **3. 시스템 구성 요구사항 (Equipment Composition Requirements)**
+
+### **[ 라우팅 ]**
+
+| 구분 | 내용 |
+| --- | --- |
+| 요구사항 ID | ECR-001 |
+| 요구사항명 | BottomTab Navigation |
+| 개요 (목적, 내용) | SNS 클론 코딩 때의 바텀 탭을 그대로 활용한다. |
+| 입력 |  |
+| 출력 |  |
+
+### **[ 위치 기반 ]**
+
+| 구분 | 내용 |
+| --- | --- |
+| 요구사항 ID | ECR-002 |
+| 요구사항명 | 위치 기반 |
+| 개요 (목적, 내용) | react-native-geolocation-service 등의 라이브러리를 활용하여 사용자의 위치 정보를 가져온다. |
+| 입력 |  |
+| 출력 |  |
+
